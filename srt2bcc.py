@@ -25,17 +25,19 @@ def srt2bcc(srtf,code):
                 count2 = count1+1
                 num = num+1
             elif index==count1:
-                st1 = value.strip()[3:5]
-                st2 = value.strip()[6:8]
-                st3 = value.strip()[9:12]
-                et1 = value.strip()[20:22]
-                et2 = value.strip()[23:25]
-                et3 = value.strip()[26:29]
+                st1 = value.strip().split(':')[0]
+                st2 = value.strip().split(':')[1]
+                st3 = value.strip().split(':')[2].split(',')[0]
+                st4 = value.strip().split(':')[2].split(',')[1].split()[0]
+                et1 = value.strip().split(':')[2].split()[2]
+                et2 = value.strip().split(':')[3]
+                et3 = value.strip().split(':')[4].split(',')[0]
+                et4 = value.strip().split(':')[4].split(',')[1]
                 #stime = str(st1 * 60 + st2)+ "." + str(st3);
                 #etime = str(et1 * 60 + et2)+ "." + str(et3);
                 #print (st1,st2,st3,et1,et2,et3)
-                stime = str(int(st1) * 60 + int(st2))+ "." + st3;
-                etime = str(int(et1) * 60 + int(et2))+ "." + et3;
+                stime = str(int(st1) * 3600 + int(st2) * 60 + int(st3))+ "." + st4;
+                etime = str(int(et1) * 3600 + int(et2) * 60 + int(et3))+ "." + et4;
                 #print(int(st1),int(st2),int(st3),int(et1),int(et2),int(et3))
                 #count1=count1+4
             elif index==count2:
