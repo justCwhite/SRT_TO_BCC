@@ -48,11 +48,11 @@ def srt2bcc(srtf,code):
                 #write1(json.dumps(dic,ensure_ascii=False).replace(" ", "")+",",bccf)
             elif value=="":
                 dic = {"from":float(stime),"to":float(etime),"location":2,"content":content}
-                write1(json.dumps(dic,ensure_ascii=False).replace(" ", "")+",",bccf)
+                write1(json.dumps(dic,ensure_ascii=False,separators=(",",":"))+",",bccf)
             elif index == counttt:
                 content = content+"\n"+value
                 dic = {"from":float(stime),"to":float(etime),"location":2,"content":content}
-                write1(json.dumps(dic,ensure_ascii=False).replace(" ", "")+",",bccf)
+                write1(json.dumps(dic,ensure_ascii=False,separators=(",",":"))+",",bccf)
             elif value :
                 #content = value.strip()[3:-4]
                 content = content+"\n"+value
